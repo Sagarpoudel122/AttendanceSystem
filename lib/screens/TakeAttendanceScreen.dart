@@ -92,7 +92,7 @@ class _TakeAttendanceScreenState extends State<TakeAttendanceScreen> {
                 title: 'Success',
                 message: json.decode(resp.body)['message'],
                 icon: Icon(
-                  Icons.error_outline,
+                  Icons.check,
                   size: 28,
                   color: Colors.white,
                 ),

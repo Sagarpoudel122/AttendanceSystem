@@ -28,38 +28,12 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   initState() {
     super.initState();
-    _loadUsername().then((bool isAuth) {
-      if (isAuth) {
-        Navigator.pushReplacement(
-          context,
-          PageTransition(
-              type: PageTransitionType.rightToLeft, child: MainWidget()),
-        );
-      }
-    });
   }
 
   void toggleObscureText() {
     setState(() {
       obscureText = !obscureText;
     });
-  }
-
-  Future<bool> _loadUsername() async {
-    try {
-      SharedPreferences _prefs = await SharedPreferences.getInstance();
-      var _token = _prefs.getString("token") ?? "";
-      var _userInfo = _prefs.getString("userInfo") ?? "";
-
-      if (_token.length > 0 && _userInfo.length > 0) {
-        return true;
-      } else {
-        return false;
-      }
-    } catch (e) {
-      print(e);
-      return false;
-    }
   }
 
   Future handleLogin() async {

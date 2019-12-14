@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:attendance/library/constant.dart';
 import 'package:attendance/screens/HidenDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_villains/villain.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingScreen extends DrawerContent {
   @override
@@ -51,7 +54,17 @@ class _SettingScreenState extends State<SettingScreen> {
                       "Settings",
                       style: TextStyle(color: white, fontSize: 20.0),
                     ),
-                    Container()
+                    CircleAvatar(
+                      backgroundColor: white,
+                      minRadius: 25,
+                      child: Image(
+                        height: 30,
+                        fit: BoxFit.scaleDown,
+                        image: NetworkImage(
+                          'https://www.pngarts.com/files/3/Cool-Avatar-Transparent-Image.png',
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
