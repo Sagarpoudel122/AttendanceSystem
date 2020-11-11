@@ -1,0 +1,7 @@
+ [
+    {
+      "question": "What is the capital of Nepal",
+      "answer": ["Kathmandu", "Butwal", "Biratnagar", "Hetauda"],
+      "correctanswer": "Kathmandu"
+    },
+  ];
